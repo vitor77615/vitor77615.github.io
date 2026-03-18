@@ -1,51 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <title>Goiaba News Gamer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goiaba News Gamer</title>
+    <style>
+        /* CONFIGURAÇÕES GERAIS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* CABEÇALHO (O TOPO DO SITE) */
+        header {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* CONTAINER DAS NOTÍCIAS */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        /* O "CARD" DA NOTÍCIA (IGUAL AO VÍDEO) */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.01); /* Efeito de zoom de leve ao passar o mouse */
+        }
+
+        /* IMAGEM DA NOTÍCIA */
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+        }
+
+        /* CONTEÚDO DENTRO DO CARD */
+        .card-body {
+            padding: 20px;
+        }
+
+        .tag {
+            background-color: #e31e24; /* Vermelho estilo Adrenaline */
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 22px;
+            margin: 15px 0 10px 0;
+            color: #222;
+        }
+
+        .meta-info {
+            font-size: 13px;
+            color: #777;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* RODAPÉ */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
 </head>
+<body>
 
-<body style="margin:0; font-family:Arial; background:#ffffff;">
+    <header>
+        🎮 Goiaba News Gamer
+    </header>
 
-  <!-- TOPO -->
-  <div style="background:black; color:white; padding:15px; text-align:center;">
-    <h1>🎮 Goiaba News Gamer</h1>
-  </div>
+    <div class="container">
 
-  <!-- CONTEÚDO -->
-  <div style="max-width:500px; margin:auto;">
+        <div class="card">
+            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202312/0115/222ef6a858e727e5a87be7b6531477f1548e658145a306c5.png" alt="GTA 6">
+            <div class="card-body">
+                <span class="tag">Destaque</span>
+                <h2 class="card-title">Novidades de GTA 6 mostram gráficos incríveis e mapa gigante</h2>
+                <div class="meta-info">
+                    <span>🕒 18/03/2026</span> | <span>💬 12 Comentários</span>
+                </div>
+            </div>
+        </div>
 
-    <!-- POST -->
-    <div style="margin-bottom:30px;">
-      <img src="https://via.placeholder.com/500" style="width:100%;">
-      <h2 style="padding:10px;">Free Fire 🔥</h2>
-      <p style="padding:10px;">Nova atualização trouxe eventos e melhorias no jogo.</p>
+        <div class="card">
+            <img src="https://cdn2.unrealengine.com/fortnite-battle-royale-chapter-5-season-1-1920x1080-607066a365df.jpg" alt="Fortnite">
+            <div class="card-body">
+                <span class="tag">Update</span>
+                <h2 class="card-title">Nova temporada de Fortnite chegou com skins e mapa atualizado</h2>
+                <div class="meta-info">
+                    <span>🕒 18/03/2026</span> | <span>💬 8 Comentários</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-pro-image-block-01-en-09sep24" alt="PS5 Pro">
+            <div class="card-body">
+                <span class="tag">Hardware</span>
+                <h2 class="card-title">Como ativar o PSSR no PlayStation 5 Pro para melhorar os gráficos</h2>
+                <div class="meta-info">
+                    <span>🕒 17/03/2026</span> | <span>💬 5 Comentários</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div style="margin-bottom:30px;">
-      <img src="https://via.placeholder.com/500" style="width:100%;">
-      <h2 style="padding:10px;">GTA 6 👀</h2>
-      <p style="padding:10px;">Novidades mostram gráficos incríveis e mapa gigante.</p>
-    </div>
+    <footer>
+        © 2026 Goiaba News Gamer - Criado por Victor no GitHub
+    </footer>
 
-    <div style="margin-bottom:30px;">
-      <img src="https://via.placeholder.com/500" style="width:100%;">
-      <h2 style="padding:10px;">Fortnite 🎯</h2>
-      <p style="padding:10px;">Nova temporada chegou com skins e mapa atualizado.</p>
-    </div>
-
-    <div style="margin-bottom:30px;">
-      <img src="https://via.placeholder.com/500" style="width:100%;">
-      <h2 style="padding:10px;">Call of Duty 🔫</h2>
-      <p style="padding:10px;">Novas armas e modos foram adicionados.</p>
-    </div>
-
-    <div style="margin-bottom:30px;">
-      <img src="https://via.placeholder.com/500" style="width:100%;">
-      <h2 style="padding:10px;">Minecraft ⛏️</h2>
-      <p style="padding:10px;">Novos biomas e criaturas foram adicionados.</p>
-    </div>
-
-  </div>
-
-</body><img src="https://images7.alphacoders.com/111/1115147.jpg" style="width:100%;"> 
+</body>
 </html>
