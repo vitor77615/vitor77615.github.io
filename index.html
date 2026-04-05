@@ -1,263 +1,419 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Goiaba News Gamer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #ffffff;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .topo {
-      background: black;
-      color: white;
-      padding: 15px;
-      text-align: center;
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b0b0b;
+      color: #fff;
     }
-    .conteudo {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    .post {
-      background: white;
-      padding: 15px;
-      margin-bottom: 30px;
+
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #000;
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .topbar-inner {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .menu-btn {
+      font-weight: 700;
+      color: #d8d8d8;
+      font-size: 14px;
+    }
+
+    .logo {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #ff4d2d;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-box input {
+      background: #1b1b1b;
+      border: 1px solid #2a2a2a;
+      color: #fff;
+      padding: 12px 14px;
       border-radius: 10px;
+      width: 220px;
+      outline: none;
     }
-    .post img {
+
+    .theme-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff8a00, #ff4d2d);
+      border: 2px solid #3a3a3a;
+    }
+
+    .nav {
+      background: #111;
+      border-bottom: 1px solid #242424;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 16px 0;
+    }
+
+    .nav li {
+      white-space: nowrap;
+      color: #e7e7e7;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .hero {
+      margin: 28px 0 26px;
+      background: linear-gradient(90deg, #1d1d1d, #161616);
+      border: 1px solid #242424;
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .hero h2 {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      color: #f6f6f6;
+    }
+
+    .hero p {
+      color: #cfcfcf;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .news-card {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+      background: transparent;
+    }
+
+    .news-card img {
       width: 100%;
-      border-radius: 10px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
     }
-    .post h2 {
-      padding: 10px 0 5px 0;
+
+    .news-content .category {
+      color: #ff7a3d;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
     }
-    .post p {
-      padding: 0 0 10px 0;
+
+    .news-content h3 {
+      font-size: 20px;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      color: #bbbbbb;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .tag.orange { background: #ff8a00; }
+    .tag.blue { background: #228be6; }
+    .tag.green { background: #43aa4b; }
+    .tag.red { background: #e63946; }
+    .tag.gray { background: #2d2d2d; }
+
+    .sidebar-box {
+      background: #161616;
+      border: 1px solid #272727;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 22px;
+    }
+
+    .sidebar-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ff7a3d;
+      margin-bottom: 16px;
+    }
+
+    .review-main img,
+    .small-review img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .review-main img {
+      height: 180px;
+      margin-bottom: 14px;
+    }
+
+    .review-main h4 {
+      font-size: 16px;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .small-review {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      margin-top: 16px;
+      align-items: start;
+    }
+
+    .small-review img {
+      height: 80px;
+    }
+
+    .small-review h5 {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .footer-space {
+      height: 40px;
+    }
+
+    @media (max-width: 980px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-card {
+        grid-template-columns: 1fr;
+      }
+
+      .news-card img {
+        height: 220px;
+      }
+
+      .topbar-inner {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 16px 0;
+      }
+
+      .search-box {
+        width: 100%;
+        justify-content: flex-end;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo {
+        font-size: 26px;
+      }
+
+      .search-box input {
+        width: 160px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .news-content h3 {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
-
 <body>
 
-  <div class="topo">
-    <h1>🎮 Goiaba News Gamer</h1>
-    <p>As melhores notícias dos jogos</p>
-  </div>
-
-  <div class="conteudo">
-
-    <!-- 1 -->
-    <div class="post">
-      <img src="https://images7.alphacoders.com/111/1115147.jpg">
-      <h2>Free Fire 🔥</h2>
-      <p>Nova atualização trouxe eventos e melhorias no jogo.</p>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="menu-btn">☰ MENU</div>
+      <div class="logo">GOIABA<span>NEWS</span></div>
+      <div class="search-box">
+        <input type="text" placeholder="Busca">
+        <div class="theme-circle"></div>
+      </div>
     </div>
+  </header>
 
-    <!-- 2 -->
-    <div class="post">
-      <img src="https://images6.alphacoders.com/131/1315885.jpg">
-      <h2>GTA 6 👀</h2>
-      <p>Novidades mostram gráficos incríveis e mapa gigante.</p>
+  <nav class="nav">
+    <div class="container">
+      <ul>
+        <li>Análises</li>
+        <li>Artigos</li>
+        <li>Notícias</li>
+        <li>Vídeos</li>
+        <li>Jogos</li>
+        <li>PlayStation</li>
+        <li>PC Gamer</li>
+        <li>Ofertas</li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- 3 -->
-    <div class="post">
-      <img src="https://images3.alphacoders.com/100/1008452.jpg">
-      <h2>Fortnite 🎯</h2>
-      <p>Nova temporada chegou com skins e mapa atualizado.</p>
-    </div>
+  <main class="container">
+    <section class="hero">
+      <h2>SEÇÃO ONDE VOCÊ ENCONTRA AS PRINCIPAIS NOTÍCIAS DE JOGOS.</h2>
+      <p>
+        Das atualizações de Free Fire e Fortnite até novidades de GTA 6, PlayStation,
+        EA Sports FC e muito mais. Aqui você acompanha tudo de forma simples, bonita e organizada.
+      </p>
+    </section>
 
-    <!-- 4 -->
-    <div class="post">
-      <img src="https://images5.alphacoders.com/118/1188747.jpg">
-      <h2>Call of Duty 🔫</h2>
-      <p>Novas armas e modos foram adicionados.</p>
-    </div>
+    <section class="main-grid">
+      <div class="news-list">
 
-    <!-- 5 -->
-    <div class="post">
-      <img src="https://images2.alphacoders.com/851/85182.jpg">
-      <h2>Minecraft ⛏️</h2>
-      <p>Novos biomas e criaturas foram adicionados.</p>
-    </div>
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop" alt="Jogo 1">
+          <div class="news-content">
+            <span class="category">Chegou bombando</span>
+            <h3>Nova atualização de Free Fire traz evento especial e mudanças na jogabilidade</h3>
+            <div class="meta">05/04/2026 13:50 • 3 comentários</div>
+            <div class="tags">
+              <span class="tag orange">Games</span>
+              <span class="tag blue">Mobile</span>
+              <span class="tag gray">Notícias</span>
+            </div>
+          </div>
+        </article>
 
-    <!-- 6 -->
-    <div class="post">
-      <img src="https://images5.alphacoders.com/923/923404.jpg">
-      <h2>Roblox 📈</h2>
-      <p>Plataforma cresce com novos jogos e experiências.</p>
-    </div>
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop" alt="Jogo 2">
+          <div class="news-content">
+            <span class="category">Ganhos para todos</span>
+            <h3>GTA 6 ganha novas informações e aumenta ainda mais a expectativa dos jogadores</h3>
+            <div class="meta">05/04/2026 11:31 • 12 comentários</div>
+            <div class="tags">
+              <span class="tag red">GTA 6</span>
+              <span class="tag gray">Notícias</span>
+              <span class="tag blue">Console</span>
+            </div>
+          </div>
+        </article>
 
-    <!-- 7 -->
-    <div class="post">
-      <img src="https://images.alphacoders.com/636/636448.jpg">
-      <h2>EA Sports FC ⚽</h2>
-      <p>Nova versão traz melhorias visuais e novos modos.</p>
-    </div>
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop" alt="Jogo 3">
+          <div class="news-content">
+            <span class="category">Reajustes no patch</span>
+            <h3>EA Sports FC recebe mudanças no modo Ultimate Team e melhorias de desempenho</h3>
+            <div class="meta">05/04/2026 10:02 • 8 comentários</div>
+            <div class="tags">
+              <span class="tag green">Futebol</span>
+              <span class="tag blue">EA FC</span>
+              <span class="tag gray">Atualização</span>
+            </div>
+          </div>
+        </article>
 
-    <!-- 8 -->
-    <div class="post">
-      <img src="https://images6.alphacoders.com/898/898034.jpg">
-      <h2>Valorant 🎯</h2>
-      <p>Agente novo muda o meta e traz habilidades diferentes.</p>
-    </div>
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=1200&auto=format&fit=crop" alt="Jogo 4">
+          <div class="news-content">
+            <span class="category">Temporada nova</span>
+            <h3>Fortnite recebe novidades no mapa, skins inéditas e eventos por tempo limitado</h3>
+            <div class="meta">05/04/2026 09:20 • 5 comentários</div>
+            <div class="tags">
+              <span class="tag orange">Fortnite</span>
+              <span class="tag blue">Battle Royale</span>
+              <span class="tag gray">Eventos</span>
+            </div>
+          </div>
+        </article>
 
-    <!-- 9 -->
-    <div class="post">
-      <img src="https://images.alphacoders.com/178/178402.jpg">
-      <h2>League of Legends ⚔️</h2>
-      <p>Atualização traz balanceamentos importantes e skins novas.</p>
-    </div>
+      </div>
 
-    <!-- 10 -->
-    <div class="post">
-      <img src="https://images3.alphacoders.com/845/845082.jpg">
-      <h2>Clash Royale 🏆</h2>
-      <p>Novos eventos e cartas foram adicionadas.</p>
-    </div>
+      <aside>
+        <div class="sidebar-box">
+          <div class="sidebar-title">REVIEWS</div>
 
-    <!-- 11 -->
-    <div class="post">
-      <img src="https://images7.alphacoders.com/135/1357442.jpg">
-      <h2>Apex Legends 🏹</h2>
-      <p>Nova temporada trouxe lendas e armas novas.</p>
-    </div>
+          <div class="review-main">
+            <img src="https://images.unsplash.com/photo-1580327344181-c1163234e5a0?q=80&w=1200&auto=format&fit=crop" alt="Review principal">
+            <h4>REVIEW | Novo jogo de aventura impressiona com visual bonito e gameplay divertido</h4>
+          </div>
 
-    <!-- 12 -->
-    <div class="post">
-      <img src="https://images8.alphacoders.com/121/1214963.jpg">
-      <h2>FIFA 23 ⚽</h2>
-      <p>Atualização trouxe novos modos e times licenciados.</p>
-    </div>
+          <div class="small-review">
+            <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=1200&auto=format&fit=crop" alt="Review 2">
+            <h5>REVIEW | Jogo de corrida entrega velocidade e gráficos incríveis</h5>
+          </div>
 
-    <!-- 13 -->
-    <div class="post">
-      <img src="https://images2.alphacoders.com/130/1309647.jpg">
-      <h2>Overwatch 2 🕹️</h2>
-      <p>Novos mapas e heróis disponíveis para todos os jogadores.</p>
-    </div>
+          <div class="small-review">
+            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1200&auto=format&fit=crop" alt="Review 3">
+            <h5>REVIEW | Novo game de ação agrada quem gosta de combate rápido</h5>
+          </div>
+        </div>
+      </aside>
+    </section>
 
-    <!-- 14 -->
-    <div class="post">
-      <img src="https://images3.alphacoders.com/117/1173983.jpg">
-      <h2>Rainbow Six Siege 🔫</h2>
-      <p>Novas operações e ajustes de balanceamento foram aplicados.</p>
-    </div>
-
-    <!-- 15 -->
-    <div class="post">
-      <img src="https://images6.alphacoders.com/101/1017035.jpg">
-      <h2>CS:GO 🎯</h2>
-      <p>Novas skins e mapas competitivos lançados recentemente.</p>
-    </div>
-
-    <!-- 16 -->
-    <div class="post">
-      <img src="https://images.alphacoders.com/158/158229.jpg">
-      <h2>Valorant Mobile 📱</h2>
-      <p>Versão mobile trouxe nova jogabilidade para dispositivos.</p>
-    </div>
-
-    <!-- 17 -->
-    <div class="post">
-      <img src="https://images5.alphacoders.com/900/900528.jpg">
-      <h2>Pokemon Scarlet/ Violet 🟣🔴</h2>
-      <p>Novos Pokémon e regiões foram adicionados ao jogo.</p>
-    </div>
-
-    <!-- 18 -->
-    <div class="post">
-      <img src="https://images7.alphacoders.com/135/1355297.jpg">
-      <h2>The Sims 4 🏡</h2>
-      <p>Novas expansões e itens decorativos lançados.</p>
-    </div>
-
-    <!-- 19 -->
-    <div class="post">
-      <img src="https://images2.alphacoders.com/137/1370241.jpg">
-      <h2>Ark Survival Evolved 🦖</h2>
-      <p>Novos dinossauros e mapas foram adicionados.</p>
-    </div>
-
-    <!-- 20 -->
-    <div class="post">
-      <img src="https://images8.alphacoders.com/137/1378955.jpg">
-      <h2>Cyberpunk 2077 🤖</h2>
-      <p>Atualizações corrigiram bugs e melhoraram gráficos.</p>
-    </div>
-
-    <!-- 21 -->
-    <div class="post">
-      <img src="https://images3.alphacoders.com/140/1404242.jpg">
-      <h2>Genshin Impact 🌌</h2>
-      <p>Novos personagens e eventos foram adicionados.</p>
-    </div>
-
-    <!-- 22 -->
-    <div class="post">
-      <img src="https://images7.alphacoders.com/116/1160562.jpg">
-      <h2>Roblox Piggy 🐷</h2>
-      <p>Novos capítulos e eventos estão disponíveis.</p>
-    </div>
-
-    <!-- 23 -->
-    <div class="post">
-      <img src="https://images.alphacoders.com/139/1390071.jpg">
-      <h2>Valorant Episode 7 🎯</h2>
-      <p>Novos mapas e agentes adicionados.</p>
-    </div>
-
-    <!-- 24 -->
-    <div class="post">
-      <img src="https://images5.alphacoders.com/135/1356221.jpg">
-      <h2>Dead by Daylight 🔪</h2>
-      <p>Novos killers e sobreviventes adicionados ao jogo.</p>
-    </div>
-
-    <!-- 25 -->
-    <div class="post">
-      <img src="https://images2.alphacoders.com/137/1371021.jpg">
-      <h2>Among Us 👽</h2>
-      <p>Novos mapas e skins foram lançados.</p>
-    </div>
-
-    <!-- 26 -->
-    <div class="post">
-      <img src="https://images3.alphacoders.com/130/1309876.jpg">
-      <h2>Horizon Forbidden West 🌄</h2>
-      <p>Expansões e missões extras disponíveis.</p>
-    </div>
-
-    <!-- 27 -->
-    <div class="post">
-      <img src="https://images6.alphacoders.com/119/1196061.jpg">
-      <h2>Battlefield 2042 💣</h2>
-      <p>Novos mapas e modos de jogo para multiplayer.</p>
-    </div>
-
-    <!-- 28 -->
-    <div class="post">
-      <img src="https://images.alphacoders.com/134/1345513.jpg">
-      <h2>Valorant Act 6 🔫</h2>
-      <p>Nova temporada trouxe skins e ajustes no gameplay.</p>
-    </div>
-
-    <!-- 29 -->
-    <div class="post">
-      <img src="https://images4.alphacoders.com/130/1308123.jpg">
-      <h2>League of Legends Wild Rift ⚔️</h2>
-      <p>Atualizações e novos campeões para mobile.</p>
-    </div>
-
-    <!-- 30 -->
-    <div class="post">
-      <img src="https://images7.alphacoders.com/139/1397893.jpg">
-      <h2>Free Fire MAX 🔥</h2>
-      <p>Versão MAX traz gráficos melhorados e novos eventos.</p>
-    </div>
-
-  </div>
+    <div class="footer-space"></div>
+  </main>
 
 </body>
 </html>
