@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
   <meta name="google-site-verification" content="j1IXrpZVo1IlKGGvftlZCMPlTQiDUfzxiZTowDrm-_U" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Goiaba News Gamer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,407 +13,472 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: #0b0b0b;
-      color: #fff;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+      background: #080808;
+      color: white;
     }
 
     .container {
-      width: min(1200px, 92%);
+      width: min(1220px, 92%);
       margin: 0 auto;
     }
 
-    .topbar {
-      background: #000;
-      border-bottom: 1px solid #1f1f1f;
+    .topo-data {
+      background: #111;
+      color: #f2f2f2;
+      font-size: 14px;
+      padding: 10px 0;
     }
 
-    .topbar-inner {
-      height: 82px;
+    .header {
+      background: #14b8a6;
+      padding: 22px 0;
+    }
+
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
 
-    .menu-btn {
-      font-weight: 700;
-      color: #d8d8d8;
-      font-size: 14px;
-    }
-
     .logo {
-      font-size: 34px;
+      font-size: 52px;
       font-weight: 800;
-      letter-spacing: 1px;
+      line-height: 0.95;
+      color: #003a8c;
     }
 
     .logo span {
-      color: #ff4d2d;
+      color: #ff3b30;
     }
 
-    .search-box {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .search-box input {
-      background: #1b1b1b;
-      border: 1px solid #2a2a2a;
-      color: #fff;
-      padding: 12px 14px;
-      border-radius: 10px;
-      width: 220px;
-      outline: none;
-    }
-
-    .theme-circle {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ff8a00, #ff4d2d);
-      border: 2px solid #3a3a3a;
+    .menu-icon, .search-icon {
+      font-size: 28px;
+      font-weight: bold;
     }
 
     .nav {
-      background: #111;
-      border-bottom: 1px solid #242424;
+      background: #11b3a2;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 
     .nav ul {
       list-style: none;
       display: flex;
-      gap: 30px;
+      gap: 28px;
       overflow-x: auto;
-      padding: 16px 0;
+      padding: 14px 0;
+      white-space: nowrap;
     }
 
     .nav li {
-      white-space: nowrap;
-      color: #e7e7e7;
-      font-weight: 700;
-      font-size: 16px;
-    }
-
-    .hero {
-      margin: 28px 0 26px;
-      background: linear-gradient(90deg, #1d1d1d, #161616);
-      border: 1px solid #242424;
-      border-radius: 16px;
-      padding: 28px;
-    }
-
-    .hero h2 {
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 14px;
-      color: #f6f6f6;
-    }
-
-    .hero p {
-      color: #cfcfcf;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    .main-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 32px;
-      align-items: start;
-    }
-
-    .news-list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .news-card {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 20px;
-      background: transparent;
-    }
-
-    .news-card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 14px;
-      display: block;
-    }
-
-    .news-content .category {
-      color: #ff7a3d;
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-
-    .news-content h3 {
-      font-size: 20px;
-      line-height: 1.3;
-      margin-bottom: 12px;
-    }
-
-    .meta {
-      color: #bbbbbb;
-      font-size: 13px;
-      margin-bottom: 14px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      padding: 7px 10px;
-      border-radius: 8px;
-      font-size: 12px;
       font-weight: 700;
       color: #fff;
     }
 
-    .tag.orange { background: #ff8a00; }
-    .tag.blue { background: #228be6; }
-    .tag.green { background: #43aa4b; }
-    .tag.red { background: #e63946; }
-    .tag.gray { background: #2d2d2d; }
+    .faixa {
+      background: #0f0f0f;
+      padding: 12px 0;
+      border-bottom: 1px solid #222;
+    }
 
-    .sidebar-box {
-      background: #161616;
-      border: 1px solid #272727;
-      border-radius: 16px;
-      padding: 18px;
+    .faixa-inner {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      overflow: hidden;
+    }
+
+    .tag-ultimas {
+      background: #18c7b3;
+      color: white;
+      font-weight: 800;
+      padding: 10px 24px;
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+      white-space: nowrap;
+    }
+
+    .ticker {
+      color: #d8d8d8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .stories-wrap {
+      background: #0b0b0b;
+      border-bottom: 1px solid #1a1a1a;
+      padding: 18px 0 14px;
+    }
+
+    .stories {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-behavior: smooth;
+    }
+
+    .stories::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .stories::-webkit-scrollbar-thumb {
+      background: #222;
+      border-radius: 99px;
+    }
+
+    .story {
+      min-width: 86px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .story-circle {
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #12d6c1, #1fd3ff, #2eff77);
+    }
+
+    .story-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #080808;
+      display: block;
+    }
+
+    .story p {
+      font-size: 13px;
+      font-weight: 700;
+      color: #efefef;
+      line-height: 1.2;
+    }
+
+    .main {
+      padding: 24px 0 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 24px;
+    }
+
+    .principal {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 22px;
       margin-bottom: 22px;
     }
 
-    .sidebar-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: #ff7a3d;
-      margin-bottom: 16px;
+    .principal img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 8px;
     }
 
-    .review-main img,
-    .small-review img {
+    .categoria {
+      display: inline-block;
+      background: #0f8f81;
+      color: white;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .principal h1 {
+      font-size: 30px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .principal .sub {
+      color: #d0d0d0;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .cards-embaixo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: #0f0f0f;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .card img {
       width: 100%;
-      border-radius: 12px;
+      height: 160px;
       object-fit: cover;
       display: block;
     }
 
-    .review-main img {
-      height: 180px;
-      margin-bottom: 14px;
+    .card-body {
+      padding: 12px;
     }
 
-    .review-main h4 {
+    .card h3 {
       font-size: 16px;
-      line-height: 1.35;
-      margin-bottom: 10px;
+      line-height: 1.3;
+      margin: 8px 0;
     }
 
-    .small-review {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 12px;
-      margin-top: 16px;
-      align-items: start;
-    }
-
-    .small-review img {
-      height: 80px;
-    }
-
-    .small-review h5 {
+    .card p {
+      color: #c8c8c8;
       font-size: 14px;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
-    .footer-space {
-      height: 40px;
+    .lado .news-big {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 100%;
+      background: #111;
+    }
+
+    .lado .news-big img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.72);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 22px;
+      background: linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.18));
+    }
+
+    .overlay h2 {
+      font-size: 24px;
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+
+    .overlay p {
+      color: #e4e4e4;
+      line-height: 1.45;
+      font-size: 16px;
     }
 
     @media (max-width: 980px) {
-      .main-grid {
+      .grid {
         grid-template-columns: 1fr;
       }
 
-      .news-card {
+      .principal {
         grid-template-columns: 1fr;
       }
 
-      .news-card img {
-        height: 220px;
+      .principal img {
+        height: 240px;
       }
 
-      .topbar-inner {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 16px 0;
+      .cards-embaixo {
+        grid-template-columns: 1fr;
       }
 
-      .search-box {
-        width: 100%;
-        justify-content: flex-end;
+      .lado .news-big img {
+        min-height: 320px;
       }
-    }
 
-    @media (max-width: 640px) {
       .logo {
-        font-size: 26px;
-      }
-
-      .search-box input {
-        width: 160px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .news-content h3 {
-        font-size: 18px;
+        font-size: 36px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="menu-btn">☰ MENU</div>
-      <div class="logo">GOIABA<span>NEWS</span></div>
-      <div class="search-box">
-        <input type="text" placeholder="Busca">
-        <div class="theme-circle"></div>
-      </div>
+  <div class="topo-data">
+    <div class="container">Domingo, 05 de Abril de 2026</div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div class="menu-icon">☰</div>
+      <div class="logo">GOIABA <span>NEWS</span></div>
+      <div class="search-icon">⌕</div>
     </div>
   </header>
 
   <nav class="nav">
     <div class="container">
       <ul>
-        <li>Análises</li>
-        <li>Artigos</li>
-        <li>Notícias</li>
-        <li>Vídeos</li>
-        <li>Jogos</li>
+        <li>Free Fire</li>
+        <li>GTA 6</li>
+        <li>Fortnite</li>
         <li>PlayStation</li>
         <li>PC Gamer</li>
-        <li>Ofertas</li>
+        <li>EA FC</li>
+        <li>Roblox</li>
+        <li>Minecraft</li>
       </ul>
     </div>
   </nav>
 
-  <main class="container">
-    <section class="hero">
-      <h2>SEÇÃO ONDE VOCÊ ENCONTRA AS PRINCIPAIS NOTÍCIAS DE JOGOS.</h2>
-      <p>
-        Das atualizações de Free Fire e Fortnite até novidades de GTA 6, PlayStation,
-        EA Sports FC e muito mais. Aqui você acompanha tudo de forma simples, bonita e organizada.
-      </p>
-    </section>
+  <section class="faixa">
+    <div class="container faixa-inner">
+      <div class="tag-ultimas">ÚLTIMAS NOTÍCIAS</div>
+      <div class="ticker">Free Fire recebe novidades • GTA 6 ganha novas informações • Fortnite muda o mapa • EA FC recebe melhorias</div>
+    </div>
+  </section>
 
-    <section class="main-grid">
-      <div class="news-list">
-
-        <article class="news-card">
-          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop" alt="Jogo 1">
-          <div class="news-content">
-            <span class="category">Chegou bombando</span>
-            <h3>Nova atualização de Free Fire traz evento especial e mudanças na jogabilidade</h3>
-            <div class="meta">05/04/2026 13:50 • 3 comentários</div>
-            <div class="tags">
-              <span class="tag orange">Games</span>
-              <span class="tag blue">Mobile</span>
-              <span class="tag gray">Notícias</span>
-            </div>
+  <section class="stories-wrap">
+    <div class="container">
+      <div class="stories">
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=300&auto=format&fit=crop" alt="Free Fire">
           </div>
-        </article>
-
-        <article class="news-card">
-          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop" alt="Jogo 2">
-          <div class="news-content">
-            <span class="category">Ganhos para todos</span>
-            <h3>GTA 6 ganha novas informações e aumenta ainda mais a expectativa dos jogadores</h3>
-            <div class="meta">05/04/2026 11:31 • 12 comentários</div>
-            <div class="tags">
-              <span class="tag red">GTA 6</span>
-              <span class="tag gray">Notícias</span>
-              <span class="tag blue">Console</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop" alt="Jogo 3">
-          <div class="news-content">
-            <span class="category">Reajustes no patch</span>
-            <h3>EA Sports FC recebe mudanças no modo Ultimate Team e melhorias de desempenho</h3>
-            <div class="meta">05/04/2026 10:02 • 8 comentários</div>
-            <div class="tags">
-              <span class="tag green">Futebol</span>
-              <span class="tag blue">EA FC</span>
-              <span class="tag gray">Atualização</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=1200&auto=format&fit=crop" alt="Jogo 4">
-          <div class="news-content">
-            <span class="category">Temporada nova</span>
-            <h3>Fortnite recebe novidades no mapa, skins inéditas e eventos por tempo limitado</h3>
-            <div class="meta">05/04/2026 09:20 • 5 comentários</div>
-            <div class="tags">
-              <span class="tag orange">Fortnite</span>
-              <span class="tag blue">Battle Royale</span>
-              <span class="tag gray">Eventos</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <aside>
-        <div class="sidebar-box">
-          <div class="sidebar-title">REVIEWS</div>
-
-          <div class="review-main">
-            <img src="https://images.unsplash.com/photo-1580327344181-c1163234e5a0?q=80&w=1200&auto=format&fit=crop" alt="Review principal">
-            <h4>REVIEW | Novo jogo de aventura impressiona com visual bonito e gameplay divertido</h4>
-          </div>
-
-          <div class="small-review">
-            <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=1200&auto=format&fit=crop" alt="Review 2">
-            <h5>REVIEW | Jogo de corrida entrega velocidade e gráficos incríveis</h5>
-          </div>
-
-          <div class="small-review">
-            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1200&auto=format&fit=crop" alt="Review 3">
-            <h5>REVIEW | Novo game de ação agrada quem gosta de combate rápido</h5>
-          </div>
+          <p>Free Fire</p>
         </div>
-      </aside>
-    </section>
 
-    <div class="footer-space"></div>
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=300&auto=format&fit=crop" alt="GTA 6">
+          </div>
+          <p>GTA 6</p>
+        </div>
+
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=300&auto=format&fit=crop" alt="EA FC">
+          </div>
+          <p>EA FC</p>
+        </div>
+
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1580327344181-c1163234e5a0?q=80&w=300&auto=format&fit=crop" alt="PlayStation">
+          </div>
+          <p>PlayStation</p>
+        </div>
+
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=300&auto=format&fit=crop" alt="Corrida">
+          </div>
+          <p>Corrida</p>
+        </div>
+
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=300&auto=format&fit=crop" alt="Ação">
+          </div>
+          <p>Ação</p>
+        </div>
+
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=300&auto=format&fit=crop" alt="Fortnite">
+          </div>
+          <p>Fortnite</p>
+        </div>
+
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=300&auto=format&fit=crop" alt="Roblox">
+          </div>
+          <p>Roblox</p>
+        </div>
+
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1603481546238-487240415921?q=80&w=300&auto=format&fit=crop" alt="Minecraft">
+          </div>
+          <p>Minecraft</p>
+        </div>
+
+        <div class="story">
+          <div class="story-circle">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=300&auto=format&fit=crop" alt="PC Gamer">
+          </div>
+          <p>PC Gamer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <section class="principal">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop" alt="Notícia principal">
+            <div>
+              <span class="categoria">Free Fire</span>
+              <h1>Nova atualização de Free Fire traz evento especial e mudanças na jogabilidade</h1>
+              <p class="sub">A atualização trouxe novidades para os jogadores, ajustes no sistema e mais conteúdos por tempo limitado.</p>
+            </div>
+          </section>
+
+          <section class="cards-embaixo">
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop" alt="GTA 6">
+              <div class="card-body">
+                <span class="categoria">GTA 6</span>
+                <h3>GTA 6 ganha novas informações e aumenta a expectativa</h3>
+                <p>Os fãs seguem acompanhando todas as novidades do game.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=800&auto=format&fit=crop" alt="EA FC">
+              <div class="card-body">
+                <span class="categoria">EA FC</span>
+                <h3>EA Sports FC recebe mudanças e melhorias de desempenho</h3>
+                <p>Atualização promete melhorar a experiência dos jogadores.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=800&auto=format&fit=crop" alt="Fortnite">
+              <div class="card-body">
+                <span class="categoria">Fortnite</span>
+                <h3>Fortnite recebe temporada nova com skins e mapa atualizado</h3>
+                <p>O jogo continua trazendo novidades e chamando atenção.</p>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <aside class="lado">
+          <article class="news-big">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop" alt="Destaque lateral">
+            <div class="overlay">
+              <span class="categoria">PlayStation</span>
+              <h2>PlayStation continua forte com grandes lançamentos e novidades para os fãs</h2>
+              <p>Jogadores acompanham novas atualizações, promoções e conteúdos especiais.</p>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </div>
   </main>
 
 </body>
